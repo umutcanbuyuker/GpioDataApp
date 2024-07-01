@@ -32,7 +32,7 @@ namespace GpioDataApp.GpioDataApp.Presentation
 
                 while (true)
                 {
-                    Console.WriteLine("Please write the message (type 'exit' to quit):");
+                    Console.WriteLine("Please write the message (type 'exit' to quit)::");
                     string message = Console.ReadLine();
 
                     if (message.ToLower() == "exit")
