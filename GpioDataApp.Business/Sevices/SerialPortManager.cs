@@ -1,7 +1,7 @@
 ﻿using GpioDataApp.GpioDataApp.Communication.Interfaces;
 using System.IO.Ports;
 
-namespace GpioDataApp.GpioDataApp.Communication.Services
+namespace GpioDataApp.GpioDataApp.Business.Sevices
 {
     public class SerialPortManager : ISerialPortManager
     {
@@ -43,7 +43,8 @@ namespace GpioDataApp.GpioDataApp.Communication.Services
             {
                 _serialPort.WriteLine(message);
                 byte[] data = System.Text.Encoding.ASCII.GetBytes("test");
-                _serialPort.Write(data, 0, data.Length);
+                //_serialPort.Write(data, 0, data.Length);
+                _serialPort.Write("test");
                 Console.WriteLine("Message sent: " + message);
             }
             catch (UnauthorizedAccessException ex)

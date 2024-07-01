@@ -1,12 +1,9 @@
 ﻿using GpioDataApp.GpioDataApp.Business.Interfaces;
 using GpioDataApp.GpioDataApp.Business.Sevices;
 using GpioDataApp.GpioDataApp.Communication.Interfaces;
-using GpioDataApp.GpioDataApp.Communication.Services;
 using GpioDataApp.GpioDataApp.Presentation;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System.Device.Gpio;
-using System.IO.Ports;
 
 namespace GpioDataApp
 {
@@ -25,6 +22,7 @@ namespace GpioDataApp
                 {
                     services.AddSingleton<IDoorService,DoorService>();
                     services.AddSingleton<ISerialPortManager, SerialPortManager>();
+                    services.AddSingleton<IKeyService, KeyService>();
                     services.AddSingleton<SerialCommunicationService>();
                 });
 

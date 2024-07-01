@@ -8,9 +8,9 @@ namespace GpioDataApp.GpioDataApp.Business.Sevices
         private readonly int _pin = 16;
         private readonly GpioController _controller;
         private bool _doorOpen = false;
-        public DoorService()
+        public DoorService(GpioController controller)
         {
-            _controller = new GpioController();
+            _controller = controller;
             _controller.OpenPin(_pin, PinMode.InputPullUp);
             Console.WriteLine("Please start the button.");
         }
