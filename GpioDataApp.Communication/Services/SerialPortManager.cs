@@ -56,7 +56,7 @@ namespace GpioDataApp.GpioDataApp.Communication.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An unexpected error occurred: " + ex.Message);
+                Console.WriteLine("An unexpected error occurred:: " + ex.Message);
             }
         }
     }
