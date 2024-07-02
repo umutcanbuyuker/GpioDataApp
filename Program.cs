@@ -1,6 +1,7 @@
 ﻿using GpioDataApp.GpioDataApp.Business.Interfaces;
 using GpioDataApp.GpioDataApp.Business.Sevices;
 using GpioDataApp.GpioDataApp.Communication.Interfaces;
+using GpioDataApp.GpioDataApp.Extensions;
 using GpioDataApp.GpioDataApp.Presentation;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -20,10 +21,7 @@ namespace GpioDataApp
             Host.CreateDefaultBuilder(args)
                 .ConfigureServices((hostContext, services) =>
                 {
-                    services.AddSingleton<IDoorService,DoorService>();
-                    services.AddSingleton<ISerialPortManager, SerialPortManager>();
-                    services.AddSingleton<IKeyService, KeyService>();
-                    services.AddSingleton<SerialCommunicationService>();
+                    services.AddCustomServices();
                 });
 
         #region V2
