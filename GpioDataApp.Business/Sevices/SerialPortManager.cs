@@ -1,5 +1,6 @@
 ﻿using GpioDataApp.GpioDataApp.Communication.Interfaces;
 using System.IO.Ports;
+using System.Text;
 
 namespace GpioDataApp.GpioDataApp.Business.Sevices
 {
@@ -17,7 +18,8 @@ namespace GpioDataApp.GpioDataApp.Business.Sevices
                 DataBits = 8,
                 Handshake = Handshake.None,
                 ReadTimeout = 500,
-                WriteTimeout = 500
+                WriteTimeout = 500,
+                Encoding = Encoding.UTF8
             };
         }
         public void ClosePort()
@@ -42,8 +44,6 @@ namespace GpioDataApp.GpioDataApp.Business.Sevices
             try
             {
                 _serialPort.WriteLine(message);
-                byte[] data = System.Text.Encoding.ASCII.GetBytes("test");
-                //_serialPort.Write(data, 0, data.Length);
                 _serialPort.Write("test");
                 Console.WriteLine("Message sent: " + message);
             }
