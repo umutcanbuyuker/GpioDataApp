@@ -23,6 +23,7 @@ namespace GpioDataApp.GpioDataApp.Presentation
                 _doorService.MonitorDoorStatus((status) =>
                 {
                     _serialPortManager.SendMessageAsync(status);
+                    Console.WriteLine(status);
                 });
 
                 while (true)

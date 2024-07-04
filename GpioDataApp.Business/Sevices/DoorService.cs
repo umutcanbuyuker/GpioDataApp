@@ -23,7 +23,7 @@ namespace GpioDataApp.GpioDataApp.Business.Sevices
                     if (_controller.Read(_pin) == PinValue.Low)
                     {
                         _doorOpen = !_doorOpen;
-                        string status = _doorOpen ? "Kapı Açıldı" : "Kapı Kapandı";
+                        string status = _doorOpen ? "Kapi Acik" : "Kapi Kapali";
                         doorStatusChanged(status);
                         await Task.Delay(500); // debounce delay
                     }
