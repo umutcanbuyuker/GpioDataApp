@@ -2,6 +2,7 @@
 {
     public interface IDoorService
     {
+        string GetDoorStatus();
         void MonitorDoorStatus(Action<string> doorStatusChanged);
     }
 }

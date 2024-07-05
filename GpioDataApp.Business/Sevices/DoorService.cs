@@ -1,4 +1,5 @@
 ﻿using GpioDataApp.GpioDataApp.Business.Interfaces;
+using Microsoft.AspNetCore.SignalR;
 using System.Device.Gpio;
 
 namespace GpioDataApp.GpioDataApp.Business.Sevices
@@ -14,6 +15,12 @@ namespace GpioDataApp.GpioDataApp.Business.Sevices
             _controller.OpenPin(_pin, PinMode.InputPullUp);
             Console.WriteLine("Please start the button.");
         }
+
+        public string GetDoorStatus()
+        {
+            return _doorOpen ? "Kapı Açıldı" : "Kapı Kapandı";
+        }
+
         public void MonitorDoorStatus(Action<string> doorStatusChanged)
         {
             Task.Run(async () =>
